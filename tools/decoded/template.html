@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="627fc8d0-91b1-4792-b2cd-7646a07dbb1f"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet data-dc-atomics="">
+  <style>/* Classical — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9740641a-cb32-464a-b901-7099f8e7fc9e") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("242c175e-e397-4cae-a5f3-46570bb9a756") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ac081817-b609-4cce-b176-dc42b58d2826") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6f00ef78-e826-4e8c-b27d-71edc1e5160d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("45aeda26-e48a-4c91-a173-966e8156bbcf") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("9740641a-cb32-464a-b901-7099f8e7fc9e") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("242c175e-e397-4cae-a5f3-46570bb9a756") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("ac081817-b609-4cce-b176-dc42b58d2826") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("6f00ef78-e826-4e8c-b27d-71edc1e5160d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("45aeda26-e48a-4c91-a173-966e8156bbcf") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("31ff62ff-b1ec-4ff4-8144-0801b44e4670") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f364093b-ab5c-45b7-81a1-266c351d1016") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cbc6d164-e1bc-4c08-917f-6296e0834baf") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7ef7abfe-59ac-4a25-9874-935fe89785e5") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("bfde10ec-496a-40a2-be6c-bf1c24b69804") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("feb8a13b-1194-48f7-a45f-3bd0050c47cd") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("22248553-696d-4ffc-8c19-458eec7866c3") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("31ff62ff-b1ec-4ff4-8144-0801b44e4670") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("f364093b-ab5c-45b7-81a1-266c351d1016") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* math */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cbc6d164-e1bc-4c08-917f-6296e0834baf") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("7ef7abfe-59ac-4a25-9874-935fe89785e5") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("bfde10ec-496a-40a2-be6c-bf1c24b69804") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("feb8a13b-1194-48f7-a45f-3bd0050c47cd") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("22248553-696d-4ffc-8c19-458eec7866c3") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201f1d;
+  --color-accent: #b68235;
+  --color-accent-2: #ac803e;
+  --color-divider: color-mix(in srgb, #201f1d 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  --color-accent-100: #fff3e4;
+  --color-accent-200: #ffe3bf;
+  --color-accent-300: #facb8d;
+  --color-accent-400: #e1ad66;
+  --color-accent-500: #c28d41;
+  --color-accent-600: #a06f24;
+  --color-accent-700: #7d5411;
+  --color-accent-800: #5a3b0a;
+  --color-accent-900: #3a270d;
+
+  --color-accent-2-100: #fff3e4;
+  --color-accent-2-200: #ffe3be;
+  --color-accent-2-300: #f5cd96;
+  --color-accent-2-400: #dbaf70;
+  --color-accent-2-500: #bc8f4e;
+  --color-accent-2-600: #9b7232;
+  --color-accent-2-700: #79561f;
+  --color-accent-2-800: #573d14;
+  --color-accent-2-900: #382810;
+
+  --font-heading: "Cormorant Garamond", system-ui, sans-serif;
+  --font-heading-weight: 600; /* review round 3: bold retired — semibold is the
+     interface headings' ceiling (they need the weight at small sizes); display
+     text goes lighter still, to the normal cut (see the deck) */
+  --font-body: "Lora", system-ui, sans-serif;
+
+  --space-1: 4.6px;
+  --space-2: 9.2px;
+  --space-3: 13.8px;
+  --space-4: 18.4px;
+  --space-6: 27.6px;
+  --space-8: 36.8px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.plate{filter:sepia(0.22) saturate(0.82) contrast(1.05);box-sizing:border-box;
+  border:6px solid var(--color-surface);outline:1px solid var(--color-divider)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { color: var(--color-accent); border-color: var(--color-accent); }
+.btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: transparent;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: transparent; border: 1px solid var(--color-divider);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg); border: 1px solid var(--color-divider);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+</style>
+  <script src="e763b13b-550a-4413-afc0-2b3ba77ee4b5"></script>
+  <style>
+    body{margin:0}
+    @keyframes tf-spin{to{transform:rotate(360deg)}}
+    ::-webkit-scrollbar{width:0;height:0}
+  </style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--color-surface);padding:48px 24px;font-family:var(--font-body);">
+
+  <div style="width:390px;height:844px;flex:none;border-radius:52px;border:10px solid var(--color-neutral-900);background:var(--color-bg);box-shadow:var(--shadow-lg);overflow:hidden;position:relative;display:flex;flex-direction:column;color:var(--color-text);">
+
+    <div style="flex:none;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-family:var(--font-heading);font-weight:600;font-size:13px;">
+      <span>9:41</span>
+      <span style="letter-spacing:0.02em;">Tus Finanzas</span>
+    </div>
+
+    <!-- WELCOME -->
+    <sc-if value="{{ isWelcome }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1;overflow-y:auto;padding:8px 28px 28px;display:flex;flex-direction:column;">
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--space-4);">
+          <div style="height:210px;border:6px solid var(--color-surface);outline:1px solid var(--color-divider);background:repeating-linear-gradient(135deg,var(--color-neutral-200),var(--color-neutral-200) 10px,var(--color-neutral-100) 10px,var(--color-neutral-100) 20px);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:ui-monospace,monospace;font-size:11px;color:var(--color-neutral-600);">ilustración: app en uso</span>
+          </div>
+          <div>
+            <h6 style="color:var(--color-accent-700);margin:0 0 6px;">Finanzas personales</h6>
+            <h1 style="margin:0 0 10px;">Tus Finanzas</h1>
+            <p style="margin:0;opacity:0.75;font-size:15px;line-height:1.5;">Gastos, ingresos e inversiones de todas tus cuentas, en un solo lugar — clasificados automáticamente.</p>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;flex-direction:column;gap:var(--space-2);padding-top:var(--space-4);">
+          <button class="btn btn-primary btn-block" style="height:48px;font-size:15px;" onclick="{{ goToSignup }}">Comenzar</button>
+          <button class="btn btn-ghost btn-block" style="height:40px;" onclick="{{ goToLogin }}">Ya tengo una cuenta</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- SIGNUP -->
+    <sc-if value="{{ isSignup }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;overflow-y:auto;padding:8px 24px 16px;display:flex;flex-direction:column;">
+        <h6 style="color:var(--color-accent-700);margin:0 0 6px;">Crear cuenta</h6>
+        <h2 style="margin:0 0 6px;">Registrate</h2>
+        <p style="margin:0 0 20px;font-size:13px;opacity:0.7;">Tus datos se guardan en tu cuenta y podés verlos desde cualquier dispositivo.</p>
+
+        <div class="field" style="margin-bottom:var(--space-3);">
+          <label>Email</label>
+          <input class="input" type="email" placeholder="vos@ejemplo.com" value="{{ authEmail }}" oninput="{{ onAuthEmailInput }}">
+        </div>
+        <div class="field" style="margin-bottom:var(--space-3);">
+          <label>Contraseña</label>
+          <input class="input" type="password" placeholder="Mínimo 6 caracteres" value="{{ authPassword }}" oninput="{{ onAuthPasswordInput }}">
+        </div>
+        <sc-if value="{{ hasAuthError }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0 0 var(--space-2);font-size:12px;color:var(--color-accent-900);">{{ authError }}</p>
+        </sc-if>
+      </div>
+      <div style="flex:none;padding:var(--space-3) var(--space-4);border-top:1px solid var(--color-divider);background:var(--color-bg);">
+        <button class="btn btn-primary btn-block" style="height:46px;" onclick="{{ submitSignup }}" disabled="{{ authBusy }}">Crear cuenta</button>
+        <button class="btn btn-ghost btn-block" style="height:36px;" onclick="{{ goToWelcome }}">Volver</button>
+      </div>
+    </sc-if>
+
+    <!-- LOGIN -->
+    <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;overflow-y:auto;padding:8px 24px 16px;display:flex;flex-direction:column;">
+        <h6 style="color:var(--color-accent-700);margin:0 0 6px;">Bienvenido de nuevo</h6>
+        <h2 style="margin:0 0 6px;">Iniciar sesión</h2>
+        <p style="margin:0 0 20px;font-size:13px;opacity:0.7;">Entrá con el email y la contraseña de tu cuenta.</p>
+
+        <div class="field" style="margin-bottom:var(--space-3);">
+          <label>Email</label>
+          <input class="input" type="email" placeholder="vos@ejemplo.com" value="{{ authEmail }}" oninput="{{ onAuthEmailInput }}">
+        </div>
+        <div class="field" style="margin-bottom:var(--space-3);">
+          <label>Contraseña</label>
+          <input class="input" type="password" placeholder="Tu contraseña" value="{{ authPassword }}" oninput="{{ onAuthPasswordInput }}">
+        </div>
+        <sc-if value="{{ hasAuthError }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0 0 var(--space-2);font-size:12px;color:var(--color-accent-900);">{{ authError }}</p>
+        </sc-if>
+      </div>
+      <div style="flex:none;padding:var(--space-3) var(--space-4);border-top:1px solid var(--color-divider);background:var(--color-bg);">
+        <button class="btn btn-primary btn-block" style="height:46px;" onclick="{{ submitLogin }}" disabled="{{ authBusy }}">Iniciar sesión</button>
+        <button class="btn btn-ghost btn-block" style="height:36px;" onclick="{{ goToWelcome }}">Volver</button>
+      </div>
+    </sc-if>
+
+    <!-- PROCESSING -->
+    <sc-if value="{{ isProcessing }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);padding:0 40px;text-align:center;">
+        <div style="width:56px;height:56px;border:3px solid var(--color-divider);border-top-color:var(--color-accent);border-radius:50%;animation:tf-spin 1s linear infinite;"></div>
+        <div>
+          <h4 style="margin:0 0 6px;">{{ processingTitle }}</h4>
+          <p style="margin:0;font-size:13px;opacity:0.65;">{{ processingSubtitle }}</p>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- APP -->
+    <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1;overflow-y:auto;padding:6px 22px 24px;">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-4);">
+          <div>
+            <div style="font-size:12px;opacity:0.6;">Hola,</div>
+            <h4 style="margin:0;">{{ userLabel }}</h4>
+          </div>
+          <button class="btn btn-icon btn-secondary" onclick="{{ logout }}"><i data-lucide="log-out" style="width:17px;height:17px;"></i></button>
+        </div>
+
+        <sc-if value="{{ isTabHome }}" hint-placeholder-val="{{ true }}">
+          <div class="seg" style="margin-bottom:var(--space-4);">
+            <label class="seg-opt"><input type="radio" name="period" checked="{{ isWeek }}" onchange="{{ setWeek }}"><span>Semana</span></label>
+            <label class="seg-opt"><input type="radio" name="period" checked="{{ isMonth }}" onchange="{{ setMonth }}"><span>Mes</span></label>
+          </div>
+
+          <div class="card elev-sm" style="margin-bottom:var(--space-3);align-items:flex-start;">
+            <span class="card-kicker">Balance total</span>
+            <h1 style="margin:0;font-variant-numeric:tabular-nums;">{{ totals.balanceLabel }}</h1>
+            <div style="display:flex;gap:var(--space-4);margin-top:var(--space-1);">
+              <div>
+                <div style="font-size:11px;opacity:0.55;">Ingresos</div>
+                <div style="font-size:14px;font-weight:600;">{{ totals.incomeLabel }}</div>
+              </div>
+              <div>
+                <div style="font-size:11px;opacity:0.55;">Gastos</div>
+                <div style="font-size:14px;font-weight:600;">{{ totals.expenseLabel }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin:0 0 10px;">
+            <h6 style="margin:0;color:var(--color-accent-700);">Tus cuentas</h6>
+            <button class="btn btn-icon btn-secondary" style="width:28px;height:28px;" onclick="{{ openAddAccount }}"><i data-lucide="plus" style="width:14px;height:14px;"></i></button>
+          </div>
+          <sc-if value="{{ hasAccounts }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ accounts }}" as="acc" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);">
+                <div style="width:30px;height:30px;flex:none;border-radius:50%;border:1px solid var(--color-divider);background:var(--color-accent-100);color:var(--color-accent-800);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-weight:600;font-size:12px;">{{ acc.initial }}</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:13px;">{{ acc.name }}</div>
+                  <div style="font-size:11px;opacity:0.55;">{{ acc.kind }}</div>
+                </div>
+                <div style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;">{{ acc.balanceLabel }}</div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noAccounts }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 var(--space-3);font-size:12px;opacity:0.6;">Todavía no agregaste ninguna cuenta.</p>
+          </sc-if>
+
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin:var(--space-4) 0 10px;">
+            <h6 style="margin:0;color:var(--color-accent-700);">Gastos por categoría</h6>
+            <button class="btn btn-icon btn-secondary" style="width:28px;height:28px;" onclick="{{ openAddTx }}"><i data-lucide="plus" style="width:14px;height:14px;"></i></button>
+          </div>
+          <sc-if value="{{ hasCategories }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ categories }}" as="c" hint-placeholder-count="5">
+              <div style="margin-bottom:var(--space-3);">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">
+                  <i data-lucide="{{ c.icon }}" style="width:15px;height:15px;color:var(--color-accent-700);"></i>
+                  <span style="font-size:13px;flex:1;">{{ c.name }}</span>
+                  <span style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;">{{ c.amountLabel }}</span>
+                </div>
+                <div style="height:5px;border-radius:3px;background:var(--color-neutral-200);overflow:hidden;">
+                  <div style="height:100%;background:var(--color-accent);width:{{ c.pctWidth }};"></div>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noCategories }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:12px;opacity:0.6;">Todavía no cargaste ningún movimiento.</p>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ isTabBudgets }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;">
+            <h6 style="margin:0;color:var(--color-accent-700);">Presupuestos del mes</h6>
+            <button class="btn btn-icon btn-secondary" style="width:28px;height:28px;" onclick="{{ openAddBudget }}"><i data-lucide="plus" style="width:14px;height:14px;"></i></button>
+          </div>
+          <sc-if value="{{ hasBudgets }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ budgets }}" as="b" hint-placeholder-count="4">
+              <div class="card" style="margin-bottom:var(--space-2);gap:6px;">
+                <div style="display:flex;justify-content:space-between;">
+                  <span class="card-title" style="font-size:14px;">{{ b.name }}</span>
+                  <span style="font-size:12px;font-weight:600;color:{{ b.statusColor }};">{{ b.statusLabel }}</span>
+                </div>
+                <div style="height:6px;border-radius:3px;background:var(--color-neutral-200);overflow:hidden;">
+                  <div style="height:100%;background:{{ b.barColor }};width:{{ b.pctWidth }};"></div>
+                </div>
+                <div style="font-size:12px;opacity:0.6;">{{ b.spentLabel }} de {{ b.limitLabel }}</div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noBudgets }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0 0 var(--space-2);font-size:12px;opacity:0.6;">Todavía no armaste presupuestos.</p>
+          </sc-if>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;margin:var(--space-4) 0 10px;">
+            <h6 style="margin:0;color:var(--color-accent-700);">Metas de ahorro</h6>
+            <button class="btn btn-icon btn-secondary" style="width:28px;height:28px;" onclick="{{ openAddGoal }}"><i data-lucide="plus" style="width:14px;height:14px;"></i></button>
+          </div>
+          <sc-if value="{{ hasGoals }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ goals }}" as="g" hint-placeholder-count="2">
+              <div class="card" style="margin-bottom:var(--space-2);gap:6px;">
+                <span class="card-title" style="font-size:14px;">{{ g.name }}</span>
+                <div style="height:6px;border-radius:3px;background:var(--color-neutral-200);overflow:hidden;">
+                  <div style="height:100%;background:var(--color-accent);width:{{ g.pctWidth }};"></div>
+                </div>
+                <div style="font-size:12px;opacity:0.6;">{{ g.savedLabel }} de {{ g.targetLabel }}</div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noGoals }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:12px;opacity:0.6;">Todavía no creaste metas de ahorro.</p>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ isTabInvestments }}" hint-placeholder-val="{{ false }}">
+          <div class="card elev-sm" style="margin-bottom:var(--space-4);gap:8px;align-items:flex-start;">
+            <span class="card-kicker">Portafolio total</span>
+            <h1 style="margin:0;font-variant-numeric:tabular-nums;">{{ portfolio.totalLabel }}</h1>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;margin:0 0 10px;">
+            <h6 style="margin:0;color:var(--color-accent-700);">Tus fondos</h6>
+            <button class="btn btn-icon btn-secondary" style="width:28px;height:28px;" onclick="{{ openAddHolding }}"><i data-lucide="plus" style="width:14px;height:14px;"></i></button>
+          </div>
+
+          <sc-if value="{{ hasHoldings }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;height:12px;border-radius:6px;overflow:hidden;margin-bottom:var(--space-4);">
+              <sc-for list="{{ holdings }}" as="h" hint-placeholder-count="4">
+                <div style="height:100%;width:{{ h.allocWidth }};background:{{ h.shade }};"></div>
+              </sc-for>
+            </div>
+
+            <sc-for list="{{ holdings }}" as="h" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:10px;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);">
+                <div style="width:10px;height:10px;border-radius:50%;background:{{ h.shade }};flex:none;"></div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:13px;font-weight:600;">{{ h.name }}</div>
+                  <div style="font-size:11px;opacity:0.55;">{{ h.ticker }}</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;">{{ h.valueLabel }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noHoldings }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:12px;opacity:0.6;">Todavía no cargaste ningún fondo o inversión.</p>
+          </sc-if>
+        </sc-if>
+      </div>
+
+      <div style="flex:none;display:flex;border-top:1px solid var(--color-divider);background:var(--color-bg);">
+        <button style="flex:1;background:transparent;border:0;padding:10px 0 12px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:{{ tabColor.home }};font-family:var(--font-heading);font-size:10px;" onclick="{{ setTabHome }}"><i data-lucide="home" style="width:19px;height:19px;"></i>Inicio</button>
+        <button style="flex:1;background:transparent;border:0;padding:10px 0 12px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:{{ tabColor.budgets }};font-family:var(--font-heading);font-size:10px;" onclick="{{ setTabBudgets }}"><i data-lucide="piggy-bank" style="width:19px;height:19px;"></i>Metas</button>
+        <button style="flex:1;background:transparent;border:0;padding:10px 0 12px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;color:{{ tabColor.investments }};font-family:var(--font-heading);font-size:10px;" onclick="{{ setTabInvestments }}"><i data-lucide="trending-up" style="width:19px;height:19px;"></i>Inversiones</button>
+      </div>
+    </sc-if>
+
+    <!-- ADD GOAL DIALOG -->
+    <sc-if value="{{ addGoalOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="dialog-backdrop" style="position:absolute;">
+        <div class="dialog">
+          <span class="dialog-title">Nueva meta</span>
+          <div class="field">
+            <label>Nombre</label>
+            <input class="input" placeholder="Ej: Vacaciones" value="{{ newGoalName }}" oninput="{{ onGoalNameInput }}">
+          </div>
+          <div class="field">
+            <label>Monto objetivo</label>
+            <input class="input" placeholder="Ej: 500000" value="{{ newGoalAmount }}" oninput="{{ onGoalAmountInput }}">
+          </div>
+          <div class="dialog-actions">
+            <button class="btn btn-secondary" onclick="{{ closeAddGoal }}">Cancelar</button>
+            <button class="btn btn-primary" onclick="{{ submitGoal }}">Crear</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ADD ACCOUNT DIALOG -->
+    <sc-if value="{{ addAccountOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="dialog-backdrop" style="position:absolute;">
+        <div class="dialog">
+          <span class="dialog-title">Nueva cuenta</span>
+          <div class="field">
+            <label>Nombre</label>
+            <input class="input" placeholder="Ej: Mercado Pago" value="{{ newAccountName }}" oninput="{{ onAccountNameInput }}">
+          </div>
+          <div class="field">
+            <label>Tipo</label>
+            <input class="input" placeholder="Ej: Billetera virtual, Banco" value="{{ newAccountKind }}" oninput="{{ onAccountKindInput }}">
+          </div>
+          <div class="field">
+            <label>Saldo inicial</label>
+            <input class="input" placeholder="Ej: 50000" value="{{ newAccountBalance }}" oninput="{{ onAccountBalanceInput }}">
+          </div>
+          <div class="dialog-actions">
+            <button class="btn btn-secondary" onclick="{{ closeAddAccount }}">Cancelar</button>
+            <button class="btn btn-primary" onclick="{{ submitAccount }}" disabled="{{ formBusy }}">Crear</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ADD TRANSACTION DIALOG -->
+    <sc-if value="{{ addTxOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="dialog-backdrop" style="position:absolute;">
+        <div class="dialog">
+          <span class="dialog-title">Nuevo movimiento</span>
+          <sc-if value="{{ noAccounts }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:13px;opacity:0.75;">Primero agregá una cuenta para poder cargar movimientos.</p>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary" onclick="{{ closeAddTx }}">Cerrar</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasAccounts }}" hint-placeholder-val="{{ true }}">
+            <div class="seg">
+              <label class="seg-opt"><input type="radio" name="txtype" checked="{{ isTxExpense }}" onchange="{{ setTxExpense }}"><span>Gasto</span></label>
+              <label class="seg-opt"><input type="radio" name="txtype" checked="{{ isTxIncome }}" onchange="{{ setTxIncome }}"><span>Ingreso</span></label>
+            </div>
+            <div class="field">
+              <label>Cuenta</label>
+              <select class="input" onchange="{{ onTxAccountInput }}">
+                <sc-for list="{{ accounts }}" as="acc" hint-placeholder-count="2">
+                  <option value="{{ acc.id }}" selected="{{ acc.selected }}">{{ acc.name }}</option>
+                </sc-for>
+              </select>
+            </div>
+            <div class="field">
+              <label>Categoría</label>
+              <input class="input" placeholder="Ej: Comida, Transporte, Sueldo" value="{{ newTxCategory }}" oninput="{{ onTxCategoryInput }}">
+            </div>
+            <div class="field">
+              <label>Monto</label>
+              <input class="input" placeholder="Ej: 15000" value="{{ newTxAmount }}" oninput="{{ onTxAmountInput }}">
+            </div>
+            <div class="field">
+              <label>Nota (opcional)</label>
+              <input class="input" placeholder="Ej: Supermercado" value="{{ newTxNote }}" oninput="{{ onTxNoteInput }}">
+            </div>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary" onclick="{{ closeAddTx }}">Cancelar</button>
+              <button class="btn btn-primary" onclick="{{ submitTx }}" disabled="{{ formBusy }}">Guardar</button>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ADD BUDGET DIALOG -->
+    <sc-if value="{{ addBudgetOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="dialog-backdrop" style="position:absolute;">
+        <div class="dialog">
+          <span class="dialog-title">Nuevo presupuesto</span>
+          <div class="field">
+            <label>Categoría</label>
+            <input class="input" placeholder="Ej: Comida" value="{{ newBudgetCategory }}" oninput="{{ onBudgetCategoryInput }}">
+          </div>
+          <div class="field">
+            <label>Límite mensual</label>
+            <input class="input" placeholder="Ej: 150000" value="{{ newBudgetLimit }}" oninput="{{ onBudgetLimitInput }}">
+          </div>
+          <div class="dialog-actions">
+            <button class="btn btn-secondary" onclick="{{ closeAddBudget }}">Cancelar</button>
+            <button class="btn btn-primary" onclick="{{ submitBudget }}" disabled="{{ formBusy }}">Crear</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ADD HOLDING DIALOG -->
+    <sc-if value="{{ addHoldingOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="dialog-backdrop" style="position:absolute;">
+        <div class="dialog">
+          <span class="dialog-title">Nuevo fondo</span>
+          <div class="field">
+            <label>Nombre</label>
+            <input class="input" placeholder="Ej: CEDEARs, Fondo Money Market" value="{{ newHoldingName }}" oninput="{{ onHoldingNameInput }}">
+          </div>
+          <div class="field">
+            <label>Ticker (opcional)</label>
+            <input class="input" placeholder="Ej: FCI" value="{{ newHoldingTicker }}" oninput="{{ onHoldingTickerInput }}">
+          </div>
+          <div class="field">
+            <label>Valor actual</label>
+            <input class="input" placeholder="Ej: 500000" value="{{ newHoldingValue }}" oninput="{{ onHoldingValueInput }}">
+          </div>
+          <div class="dialog-actions">
+            <button class="btn btn-secondary" onclick="{{ closeAddHolding }}">Cancelar</button>
+            <button class="btn btn-primary" onclick="{{ submitHolding }}" disabled="{{ formBusy }}">Crear</button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 480, &quot;height&quot;: 900},
+  &quot;initialScreen&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;welcome&quot;, &quot;options&quot;: [&quot;welcome&quot;, &quot;connect&quot;, &quot;processing&quot;, &quot;app&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Demo&quot;},
+  &quot;initialPeriod&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;month&quot;, &quot;options&quot;: [&quot;week&quot;, &quot;month&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Demo&quot;},
+  &quot;showAIBadges&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Demo&quot;}
+}">
+const SUPABASE_URL = 'https://xcexrycodletuzhmhihd.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_p4weGdazY3cCWK4cot5cGQ_wyrhkXuQ';
+
+// Loaded lazily (rather than via a <script> tag in <head>) because the
+// dc-runtime evaluates this class as soon as its own script finishes
+// loading, without reliably waiting for sibling <script src> tags — a
+// top-level `supabase.createClient(...)` call here would race that.
+let _sbClient = null;
+let _sbLoadPromise = null;
+function loadSupabaseLib() {
+  if (window.supabase) return Promise.resolve(window.supabase);
+  if (!_sbLoadPromise) {
+    _sbLoadPromise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
+      s.onload = () => resolve(window.supabase);
+      s.onerror = () => reject(new Error('No se pudo cargar la librería de Supabase.'));
+      document.head.appendChild(s);
+    });
+  }
+  return _sbLoadPromise;
+}
+async function getSb() {
+  if (_sbClient) return _sbClient;
+  const lib = await loadSupabaseLib();
+  _sbClient = lib.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  return _sbClient;
+}
+
+const CATEGORY_ICONS = {
+  'Comida': 'utensils', 'Servicios': 'zap', 'Transporte': 'car',
+  'Entretenimiento': 'clapperboard', 'Salud': 'heart-pulse', 'Sueldo': 'wallet',
+  'Otros': 'more-horizontal',
+};
+function iconFor(cat) { return CATEGORY_ICONS[cat] || 'more-horizontal'; }
+
+function money(n) {
+  return '$' + Math.round(n).toLocaleString('es-AR');
+}
+
+function isInCurrentMonth(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const now = new Date();
+  return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+}
+function isInLastNDays(dateStr, days) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const now = new Date();
+  const diffDays = (now - d) / 86400000;
+  return diffDays >= 0 && diffDays < days;
+}
+
+class Component extends DCLogic {
+  state = {
+    screen: this.props.initialScreen || 'processing',
+    activeTab: 'home',
+    period: this.props.initialPeriod || 'month',
+
+    session: null,
+    userEmail: '',
+    authEmail: '',
+    authPassword: '',
+    authError: '',
+    authBusy: false,
+
+    accounts: [],
+    transactions: [],
+    budgets: [],
+    holdings: [],
+    goals: [],
+
+    formBusy: false,
+
+    addAccountOpen: false, newAccountName: '', newAccountKind: '', newAccountBalance: '',
+    addTxOpen: false, newTxType: 'expense', newTxAccountId: '', newTxCategory: '', newTxAmount: '', newTxNote: '',
+    addBudgetOpen: false, newBudgetCategory: '', newBudgetLimit: '',
+    addHoldingOpen: false, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '',
+    addGoalOpen: false, newGoalName: '', newGoalAmount: '',
+  };
+
+  async componentDidMount() {
+    this.runIcons();
+    const sb = await getSb();
+    const { data } = await sb.auth.getSession();
+    if (data.session) {
+      await this.loadUserData(data.session.user);
+    } else {
+      this.setState({ screen: 'welcome' });
+    }
+  }
+  componentDidUpdate() { this.runIcons(); }
+  runIcons() { if (window.lucide) window.lucide.createIcons(); }
+
+  async loadUserData(user) {
+    this.setState({ screen: 'processing', session: true, userEmail: user.email });
+    const sb = await getSb();
+    const [accRes, txRes, budRes, holRes, goalRes] = await Promise.all([
+      sb.from('accounts').select('*').order('created_at'),
+      sb.from('transactions').select('*').order('occurred_at', { ascending: false }),
+      sb.from('budgets').select('*').order('created_at'),
+      sb.from('holdings').select('*').order('created_at'),
+      sb.from('goals').select('*').order('created_at'),
+    ]);
+    this.setState({
+      accounts: accRes.data || [],
+      transactions: txRes.data || [],
+      budgets: budRes.data || [],
+      holdings: holRes.data || [],
+      goals: goalRes.data || [],
+      screen: 'app',
+      activeTab: 'home',
+    });
+  }
+
+  goToWelcome = () => this.setState({ screen: 'welcome', authError: '' });
+  goToSignup = () => this.setState({ screen: 'signup', authEmail: '', authPassword: '', authError: '' });
+  goToLogin = () => this.setState({ screen: 'login', authEmail: '', authPassword: '', authError: '' });
+  onAuthEmailInput = (e) => this.setState({ authEmail: e.target.value, authError: '' });
+  onAuthPasswordInput = (e) => this.setState({ authPassword: e.target.value, authError: '' });
+
+  submitSignup = async () => {
+    const s = this.state;
+    if (!s.authEmail.trim() || s.authPassword.length < 6) {
+      this.setState({ authError: 'Ingresá un email válido y una contraseña de al menos 6 caracteres.' });
+      return;
+    }
+    this.setState({ authBusy: true, authError: '' });
+    const sb = await getSb();
+    const { data, error } = await sb.auth.signUp({ email: s.authEmail.trim(), password: s.authPassword });
+    if (error) { this.setState({ authBusy: false, authError: error.message }); return; }
+    if (data.session) {
+      await this.loadUserData(data.session.user);
+    } else {
+      this.setState({ authBusy: false, screen: 'login', authError: 'Revisá tu email para confirmar la cuenta y después iniciá sesión.' });
+    }
+  };
+
+  submitLogin = async () => {
+    const s = this.state;
+    this.setState({ authBusy: true, authError: '' });
+    const sb = await getSb();
+    const { data, error } = await sb.auth.signInWithPassword({ email: s.authEmail.trim(), password: s.authPassword });
+    if (error) { this.setState({ authBusy: false, authError: error.message }); return; }
+    await this.loadUserData(data.session.user);
+  };
+
+  logout = async () => {
+    const sb = await getSb();
+    await sb.auth.signOut();
+    this.setState({
+      screen: 'welcome', activeTab: 'home', session: null, userEmail: '',
+      accounts: [], transactions: [], budgets: [], holdings: [], goals: [],
+      authEmail: '', authPassword: '', authError: '',
+    });
+  };
+
+  setTabHome = () => this.setState({ activeTab: 'home' });
+  setTabBudgets = () => this.setState({ activeTab: 'budgets' });
+  setTabInvestments = () => this.setState({ activeTab: 'investments' });
+  setWeek = () => this.setState({ period: 'week' });
+  setMonth = () => this.setState({ period: 'month' });
+
+  openAddAccount = () => this.setState({ addAccountOpen: true, newAccountName: '', newAccountKind: '', newAccountBalance: '' });
+  closeAddAccount = () => this.setState({ addAccountOpen: false });
+  onAccountNameInput = (e) => this.setState({ newAccountName: e.target.value });
+  onAccountKindInput = (e) => this.setState({ newAccountKind: e.target.value });
+  onAccountBalanceInput = (e) => this.setState({ newAccountBalance: e.target.value });
+  submitAccount = async () => {
+    const s = this.state;
+    const name = s.newAccountName.trim();
+    if (!name) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { data, error } = await sb.from('accounts').insert({
+      name, kind: s.newAccountKind.trim() || 'Cuenta', initial_balance: parseInt(s.newAccountBalance, 10) || 0,
+    }).select().single();
+    this.setState({ formBusy: false });
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ accounts: [...s2.accounts, data], addAccountOpen: false }));
+  };
+
+  openAddTx = () => this.setState(s => ({
+    addTxOpen: true, newTxType: 'expense',
+    newTxAccountId: s.accounts[0] ? s.accounts[0].id : '',
+    newTxCategory: '', newTxAmount: '', newTxNote: '',
+  }));
+  closeAddTx = () => this.setState({ addTxOpen: false });
+  setTxExpense = () => this.setState({ newTxType: 'expense' });
+  setTxIncome = () => this.setState({ newTxType: 'income' });
+  onTxAccountInput = (e) => this.setState({ newTxAccountId: e.target.value });
+  onTxCategoryInput = (e) => this.setState({ newTxCategory: e.target.value });
+  onTxAmountInput = (e) => this.setState({ newTxAmount: e.target.value });
+  onTxNoteInput = (e) => this.setState({ newTxNote: e.target.value });
+  submitTx = async () => {
+    const s = this.state;
+    const amount = parseInt(s.newTxAmount, 10);
+    if (!amount || amount <= 0 || !s.newTxAccountId) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { data, error } = await sb.from('transactions').insert({
+      account_id: s.newTxAccountId,
+      type: s.newTxType,
+      category: s.newTxCategory.trim() || 'Otros',
+      amount,
+      note: s.newTxNote.trim() || null,
+    }).select().single();
+    this.setState({ formBusy: false });
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ transactions: [data, ...s2.transactions], addTxOpen: false }));
+  };
+
+  openAddBudget = () => this.setState({ addBudgetOpen: true, newBudgetCategory: '', newBudgetLimit: '' });
+  closeAddBudget = () => this.setState({ addBudgetOpen: false });
+  onBudgetCategoryInput = (e) => this.setState({ newBudgetCategory: e.target.value });
+  onBudgetLimitInput = (e) => this.setState({ newBudgetLimit: e.target.value });
+  submitBudget = async () => {
+    const s = this.state;
+    const category = s.newBudgetCategory.trim();
+    const limit_amount = parseInt(s.newBudgetLimit, 10);
+    if (!category || !limit_amount) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { data, error } = await sb.from('budgets').insert({ category, limit_amount }).select().single();
+    this.setState({ formBusy: false });
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ budgets: [...s2.budgets, data], addBudgetOpen: false }));
+  };
+
+  openAddHolding = () => this.setState({ addHoldingOpen: true, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '' });
+  closeAddHolding = () => this.setState({ addHoldingOpen: false });
+  onHoldingNameInput = (e) => this.setState({ newHoldingName: e.target.value });
+  onHoldingTickerInput = (e) => this.setState({ newHoldingTicker: e.target.value });
+  onHoldingValueInput = (e) => this.setState({ newHoldingValue: e.target.value });
+  submitHolding = async () => {
+    const s = this.state;
+    const name = s.newHoldingName.trim();
+    if (!name) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { data, error } = await sb.from('holdings').insert({
+      name, ticker: s.newHoldingTicker.trim() || null, value: parseInt(s.newHoldingValue, 10) || 0,
+    }).select().single();
+    this.setState({ formBusy: false });
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ holdings: [...s2.holdings, data], addHoldingOpen: false }));
+  };
+
+  openAddGoal = () => this.setState({ addGoalOpen: true, newGoalName: '', newGoalAmount: '' });
+  closeAddGoal = () => this.setState({ addGoalOpen: false });
+  onGoalNameInput = (e) => this.setState({ newGoalName: e.target.value });
+  onGoalAmountInput = (e) => this.setState({ newGoalAmount: e.target.value });
+  submitGoal = async () => {
+    const s = this.state;
+    const name = s.newGoalName.trim();
+    const target = parseInt(s.newGoalAmount, 10);
+    if (!name || !target) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { data, error } = await sb.from('goals').insert({ name, target, saved: 0 }).select().single();
+    this.setState({ formBusy: false });
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ goals: [...s2.goals, data], addGoalOpen: false }));
+  };
+
+  renderVals() {
+    const s = this.state;
+
+    const periodTx = s.transactions.filter(t =>
+      s.period === 'week' ? isInLastNDays(t.occurred_at, 7) : isInCurrentMonth(t.occurred_at)
+    );
+    const income = periodTx.filter(t => t.type === 'income').reduce((a, t) => a + Number(t.amount), 0);
+    const expenseTx = periodTx.filter(t => t.type === 'expense');
+    const expense = expenseTx.reduce((a, t) => a + Number(t.amount), 0);
+
+    const catMap = new Map();
+    for (const t of expenseTx) catMap.set(t.category, (catMap.get(t.category) || 0) + Number(t.amount));
+    const categories = [...catMap.entries()].sort((a, b) => b[1] - a[1]).map(([name, amount]) => ({
+      name, amountLabel: money(amount),
+      pctWidth: (expense > 0 ? Math.round((amount / expense) * 100) : 0) + '%',
+      icon: iconFor(name),
+    }));
+
+    const balanceFor = (accId) => {
+      const acc = s.accounts.find(a => a.id === accId);
+      if (!acc) return 0;
+      let bal = Number(acc.initial_balance);
+      for (const t of s.transactions) {
+        if (t.account_id !== accId) continue;
+        bal += t.type === 'income' ? Number(t.amount) : -Number(t.amount);
+      }
+      return bal;
+    };
+    const accountsOut = s.accounts.map(a => {
+      const bal = balanceFor(a.id);
+      return { ...a, initial: (a.name[0] || '?').toUpperCase(), balanceLabel: money(bal), selected: a.id === s.newTxAccountId };
+    });
+    const balance = s.accounts.reduce((a, acc) => a + balanceFor(acc.id), 0);
+
+    const monthExpenseByCategory = new Map();
+    for (const t of s.transactions) {
+      if (t.type !== 'expense' || !isInCurrentMonth(t.occurred_at)) continue;
+      monthExpenseByCategory.set(t.category, (monthExpenseByCategory.get(t.category) || 0) + Number(t.amount));
+    }
+    const budgets = s.budgets.map(b => {
+      const spent = monthExpenseByCategory.get(b.category) || 0;
+      const limit = Number(b.limit_amount);
+      const over = spent > limit;
+      const pct = limit > 0 ? Math.min(100, Math.round((spent / limit) * 100)) : 0;
+      return {
+        ...b, name: b.category,
+        pctWidth: pct + '%',
+        barColor: over ? 'var(--color-accent-900)' : 'var(--color-accent)',
+        statusColor: over ? 'var(--color-accent-900)' : 'var(--color-text)',
+        statusLabel: over ? 'Excedido' : pct + '%',
+        spentLabel: money(spent), limitLabel: money(limit),
+      };
+    });
+
+    const goals = s.goals.map(g => ({
+      ...g,
+      pctWidth: Math.min(100, Math.round((Number(g.saved) / Number(g.target)) * 100)) + '%',
+      savedLabel: money(g.saved), targetLabel: money(g.target),
+    }));
+
+    const shades = ['var(--color-accent-700)', 'var(--color-accent-500)', 'var(--color-accent-300)', 'var(--color-neutral-400)', 'var(--color-neutral-600)'];
+    const portfolioTotal = s.holdings.reduce((a, h) => a + Number(h.value), 0);
+    const holdings = s.holdings.map((h, i) => ({
+      ...h,
+      allocWidth: (portfolioTotal > 0 ? Math.round((Number(h.value) / portfolioTotal) * 100) : 0) + '%',
+      valueLabel: money(h.value),
+      shade: shades[i % shades.length],
+    }));
+
+    return {
+      isWelcome: s.screen === 'welcome',
+      isSignup: s.screen === 'signup',
+      isLogin: s.screen === 'login',
+      isProcessing: s.screen === 'processing',
+      isApp: s.screen === 'app',
+      processingTitle: s.session ? 'Cargando tus datos' : 'Un momento',
+      processingSubtitle: s.session ? 'Trayendo tus cuentas y movimientos…' : 'Estamos revisando tu sesión…',
+
+      goToWelcome: this.goToWelcome,
+      goToSignup: this.goToSignup,
+      goToLogin: this.goToLogin,
+      authEmail: s.authEmail,
+      authPassword: s.authPassword,
+      authError: s.authError,
+      hasAuthError: !!s.authError,
+      authBusy: s.authBusy,
+      onAuthEmailInput: this.onAuthEmailInput,
+      onAuthPasswordInput: this.onAuthPasswordInput,
+      submitSignup: this.submitSignup,
+      submitLogin: this.submitLogin,
+      logout: this.logout,
+      userLabel: s.userEmail ? s.userEmail.split('@')[0] : '',
+
+      isTabHome: s.activeTab === 'home',
+      isTabBudgets: s.activeTab === 'budgets',
+      isTabInvestments: s.activeTab === 'investments',
+      setTabHome: this.setTabHome,
+      setTabBudgets: this.setTabBudgets,
+      setTabInvestments: this.setTabInvestments,
+      tabColor: {
+        home: s.activeTab === 'home' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+        budgets: s.activeTab === 'budgets' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+        investments: s.activeTab === 'investments' ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+      },
+
+      isWeek: s.period === 'week',
+      isMonth: s.period === 'month',
+      setWeek: this.setWeek,
+      setMonth: this.setMonth,
+      totals: { balanceLabel: money(balance), incomeLabel: money(income), expenseLabel: money(expense) },
+
+      accounts: accountsOut,
+      hasAccounts: accountsOut.length > 0,
+      noAccounts: accountsOut.length === 0,
+      categories,
+      hasCategories: categories.length > 0,
+      noCategories: categories.length === 0,
+
+      addAccountOpen: s.addAccountOpen,
+      openAddAccount: this.openAddAccount,
+      closeAddAccount: this.closeAddAccount,
+      newAccountName: s.newAccountName,
+      newAccountKind: s.newAccountKind,
+      newAccountBalance: s.newAccountBalance,
+      onAccountNameInput: this.onAccountNameInput,
+      onAccountKindInput: this.onAccountKindInput,
+      onAccountBalanceInput: this.onAccountBalanceInput,
+      submitAccount: this.submitAccount,
+
+      addTxOpen: s.addTxOpen,
+      openAddTx: this.openAddTx,
+      closeAddTx: this.closeAddTx,
+      isTxExpense: s.newTxType === 'expense',
+      isTxIncome: s.newTxType === 'income',
+      setTxExpense: this.setTxExpense,
+      setTxIncome: this.setTxIncome,
+      newTxCategory: s.newTxCategory,
+      newTxAmount: s.newTxAmount,
+      newTxNote: s.newTxNote,
+      onTxAccountInput: this.onTxAccountInput,
+      onTxCategoryInput: this.onTxCategoryInput,
+      onTxAmountInput: this.onTxAmountInput,
+      onTxNoteInput: this.onTxNoteInput,
+      submitTx: this.submitTx,
+
+      budgets,
+      hasBudgets: budgets.length > 0,
+      noBudgets: budgets.length === 0,
+      addBudgetOpen: s.addBudgetOpen,
+      openAddBudget: this.openAddBudget,
+      closeAddBudget: this.closeAddBudget,
+      newBudgetCategory: s.newBudgetCategory,
+      newBudgetLimit: s.newBudgetLimit,
+      onBudgetCategoryInput: this.onBudgetCategoryInput,
+      onBudgetLimitInput: this.onBudgetLimitInput,
+      submitBudget: this.submitBudget,
+
+      goals,
+      hasGoals: goals.length > 0,
+      noGoals: goals.length === 0,
+      addGoalOpen: s.addGoalOpen,
+      openAddGoal: this.openAddGoal,
+      closeAddGoal: this.closeAddGoal,
+      newGoalName: s.newGoalName,
+      newGoalAmount: s.newGoalAmount,
+      onGoalNameInput: this.onGoalNameInput,
+      onGoalAmountInput: this.onGoalAmountInput,
+      submitGoal: this.submitGoal,
+
+      portfolio: { totalLabel: money(portfolioTotal) },
+      holdings,
+      hasHoldings: holdings.length > 0,
+      noHoldings: holdings.length === 0,
+      addHoldingOpen: s.addHoldingOpen,
+      openAddHolding: this.openAddHolding,
+      closeAddHolding: this.closeAddHolding,
+      newHoldingName: s.newHoldingName,
+      newHoldingTicker: s.newHoldingTicker,
+      newHoldingValue: s.newHoldingValue,
+      onHoldingNameInput: this.onHoldingNameInput,
+      onHoldingTickerInput: this.onHoldingTickerInput,
+      onHoldingValueInput: this.onHoldingValueInput,
+      submitHolding: this.submitHolding,
+
+      formBusy: s.formBusy,
+    };
+  }
+
+}
+
+</script>
+
+
+</body></html>
