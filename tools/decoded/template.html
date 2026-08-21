@@ -661,6 +661,24 @@ textarea.input { min-height: 90px; resize: vertical; }
           <sc-if value="{{ noCategories }}" hint-placeholder-val="{{ false }}">
             <p style="margin:0;font-size:12px;opacity:0.6;">Todavía no cargaste ningún movimiento.</p>
           </sc-if>
+
+          <h6 style="margin:var(--space-4) 0 10px;color:var(--color-accent-700);">Movimientos</h6>
+          <sc-if value="{{ hasTxList }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ txList }}" as="t" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:10px;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);">
+                <i data-lucide="{{ t.icon }}" style="width:15px;height:15px;color:var(--color-accent-700);flex:none;"></i>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ t.title }}</div>
+                  <div style="font-size:11px;opacity:0.55;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ t.subtitle }}</div>
+                </div>
+                <div style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:{{ t.amountColor }};white-space:nowrap;">{{ t.amountLabel }}</div>
+                <button class="btn btn-icon btn-secondary" style="width:26px;height:26px;flex:none;" onclick="{{ t.remove }}"><i data-lucide="trash-2" style="width:12px;height:12px;"></i></button>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ noTxList }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;font-size:12px;opacity:0.6;">No hay movimientos en este período.</p>
+          </sc-if>
         </sc-if>
 
         <sc-if value="{{ isTabBudgets }}" hint-placeholder-val="{{ false }}">
@@ -725,7 +743,7 @@ textarea.input { min-height: 90px; resize: vertical; }
             </div>
 
             <sc-for list="{{ holdings }}" as="h" hint-placeholder-count="4">
-              <div style="display:flex;align-items:center;gap:10px;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);">
+              <div style="display:flex;align-items:center;gap:10px;padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);cursor:pointer;" onclick="{{ h.edit }}">
                 <div style="width:10px;height:10px;border-radius:50%;background:{{ h.shade }};flex:none;"></div>
                 <div style="flex:1;min-width:0;">
                   <div style="font-size:13px;font-weight:600;">{{ h.name }}</div>
@@ -734,6 +752,7 @@ textarea.input { min-height: 90px; resize: vertical; }
                 <div style="text-align:right;">
                   <div style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;">{{ h.valueLabel }}</div>
                 </div>
+                <i data-lucide="pencil" style="width:13px;height:13px;opacity:0.4;flex:none;"></i>
               </div>
             </sc-for>
           </sc-if>
@@ -936,7 +955,7 @@ textarea.input { min-height: 90px; resize: vertical; }
     <sc-if value="{{ addHoldingOpen }}" hint-placeholder-val="{{ false }}">
       <div class="dialog-backdrop" style="position:absolute;">
         <div class="dialog">
-          <span class="dialog-title">Nuevo fondo</span>
+          <span class="dialog-title">{{ holdingDialogTitle }}</span>
           <div class="field">
             <label>Nombre</label>
             <input class="input" placeholder="Ej: CEDEARs, Fondo Money Market" value="{{ newHoldingName }}" oninput="{{ onHoldingNameInput }}">
@@ -950,8 +969,11 @@ textarea.input { min-height: 90px; resize: vertical; }
             <input class="input" placeholder="Ej: 500000" value="{{ newHoldingValue }}" oninput="{{ onHoldingValueInput }}">
           </div>
           <div class="dialog-actions">
+            <sc-if value="{{ isEditHolding }}" hint-placeholder-val="{{ false }}">
+              <button class="btn btn-secondary" onclick="{{ deleteHolding }}" disabled="{{ formBusy }}" style="margin-right:auto;color:var(--color-accent-900);border-color:var(--color-accent-900);">Eliminar</button>
+            </sc-if>
             <button class="btn btn-secondary" onclick="{{ closeAddHolding }}">Cancelar</button>
-            <button class="btn btn-primary" onclick="{{ submitHolding }}" disabled="{{ formBusy }}">Crear</button>
+            <button class="btn btn-primary" onclick="{{ submitHolding }}" disabled="{{ formBusy }}">{{ holdingSubmitLabel }}</button>
           </div>
         </div>
       </div>
@@ -1087,6 +1109,11 @@ function parseDateFlexible(raw) {
   return null;
 }
 
+function shortDateLabel(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  return d.getDate() + ' ' + months[d.getMonth()];
+}
 function isInLastNDays(dateStr, days) {
   const d = new Date(dateStr + 'T00:00:00');
   const now = new Date();
@@ -1120,7 +1147,7 @@ class Component extends DCLogic {
     importOpen: false, importAccountId: '', importFileName: '', importHeaders: [], importRows: [],
     importDateCol: '', importAmountCol: '', importDescCol: '', importSign: 'negative', importError: '',
     addBudgetOpen: false, newBudgetCategory: '', newBudgetLimit: '',
-    addHoldingOpen: false, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '',
+    addHoldingOpen: false, editHoldingId: null, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '',
     addGoalOpen: false, newGoalName: '', newGoalAmount: '',
   };
 
@@ -1345,8 +1372,12 @@ class Component extends DCLogic {
     this.setState(s2 => ({ budgets: [...s2.budgets, data], addBudgetOpen: false }));
   };
 
-  openAddHolding = () => this.setState({ addHoldingOpen: true, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '' });
-  closeAddHolding = () => this.setState({ addHoldingOpen: false });
+  openAddHolding = () => this.setState({ addHoldingOpen: true, editHoldingId: null, newHoldingName: '', newHoldingTicker: '', newHoldingValue: '' });
+  openEditHolding = (h) => this.setState({
+    addHoldingOpen: true, editHoldingId: h.id,
+    newHoldingName: h.name, newHoldingTicker: h.ticker || '', newHoldingValue: String(h.value),
+  });
+  closeAddHolding = () => this.setState({ addHoldingOpen: false, editHoldingId: null });
   onHoldingNameInput = (e) => this.setState({ newHoldingName: e.target.value });
   onHoldingTickerInput = (e) => this.setState({ newHoldingTicker: e.target.value });
   onHoldingValueInput = (e) => this.setState({ newHoldingValue: e.target.value });
@@ -1354,14 +1385,43 @@ class Component extends DCLogic {
     const s = this.state;
     const name = s.newHoldingName.trim();
     if (!name) return;
+    const payload = { name, ticker: s.newHoldingTicker.trim() || null, value: parseInt(s.newHoldingValue, 10) || 0 };
     this.setState({ formBusy: true });
     const sb = await getSb();
-    const { data, error } = await sb.from('holdings').insert({
-      name, ticker: s.newHoldingTicker.trim() || null, value: parseInt(s.newHoldingValue, 10) || 0,
-    }).select().single();
+    if (s.editHoldingId) {
+      const { data, error } = await sb.from('holdings').update(payload).eq('id', s.editHoldingId).select().single();
+      this.setState({ formBusy: false });
+      if (error) { console.error(error); return; }
+      this.setState(s2 => ({
+        holdings: s2.holdings.map(h => h.id === data.id ? data : h),
+        addHoldingOpen: false, editHoldingId: null,
+      }));
+    } else {
+      const { data, error } = await sb.from('holdings').insert(payload).select().single();
+      this.setState({ formBusy: false });
+      if (error) { console.error(error); return; }
+      this.setState(s2 => ({ holdings: [...s2.holdings, data], addHoldingOpen: false }));
+    }
+  };
+  deleteHolding = async () => {
+    const s = this.state;
+    if (!s.editHoldingId) return;
+    this.setState({ formBusy: true });
+    const sb = await getSb();
+    const { error } = await sb.from('holdings').delete().eq('id', s.editHoldingId);
     this.setState({ formBusy: false });
     if (error) { console.error(error); return; }
-    this.setState(s2 => ({ holdings: [...s2.holdings, data], addHoldingOpen: false }));
+    this.setState(s2 => ({
+      holdings: s2.holdings.filter(h => h.id !== s.editHoldingId),
+      addHoldingOpen: false, editHoldingId: null,
+    }));
+  };
+
+  deleteTx = async (id) => {
+    const sb = await getSb();
+    const { error } = await sb.from('transactions').delete().eq('id', id);
+    if (error) { console.error(error); return; }
+    this.setState(s2 => ({ transactions: s2.transactions.filter(t => t.id !== id) }));
   };
 
   openAddGoal = () => this.setState({ addGoalOpen: true, newGoalName: '', newGoalAmount: '' });
@@ -1415,6 +1475,20 @@ class Component extends DCLogic {
     });
     const balance = s.accounts.reduce((a, acc) => a + balanceFor(acc.id), 0);
 
+    const accountNameById = new Map(s.accounts.map(a => [a.id, a.name]));
+    const txList = periodTx
+      .slice()
+      .sort((a, b) => (b.occurred_at + b.created_at).localeCompare(a.occurred_at + a.created_at))
+      .map(t => ({
+        id: t.id,
+        icon: t.type === 'income' ? 'arrow-down-circle' : iconFor(t.category),
+        title: t.note || t.category,
+        subtitle: [t.note ? t.category : null, accountNameById.get(t.account_id) || '', shortDateLabel(t.occurred_at)].filter(Boolean).join(' · '),
+        amountLabel: (t.type === 'income' ? '+' : '-') + money(t.amount),
+        amountColor: t.type === 'income' ? 'var(--color-accent-700)' : 'var(--color-text)',
+        remove: () => this.deleteTx(t.id),
+      }));
+
     const importAccountOptions = s.accounts.map(a => ({ ...a, selected: a.id === s.importAccountId }));
     const colOption = (h) => ({ value: h, label: h });
     const importDateOptions = s.importHeaders.map(h => ({ ...colOption(h), selected: h === s.importDateCol }));
@@ -1454,6 +1528,7 @@ class Component extends DCLogic {
       allocWidth: (portfolioTotal > 0 ? Math.round((Number(h.value) / portfolioTotal) * 100) : 0) + '%',
       valueLabel: money(h.value),
       shade: shades[i % shades.length],
+      edit: () => this.openEditHolding(h),
     }));
 
     return {
@@ -1504,6 +1579,9 @@ class Component extends DCLogic {
       categories,
       hasCategories: categories.length > 0,
       noCategories: categories.length === 0,
+      txList,
+      hasTxList: txList.length > 0,
+      noTxList: txList.length === 0,
 
       addAccountOpen: s.addAccountOpen,
       openAddAccount: this.openAddAccount,
@@ -1595,6 +1673,10 @@ class Component extends DCLogic {
       onHoldingTickerInput: this.onHoldingTickerInput,
       onHoldingValueInput: this.onHoldingValueInput,
       submitHolding: this.submitHolding,
+      isEditHolding: !!s.editHoldingId,
+      holdingDialogTitle: s.editHoldingId ? 'Editar fondo' : 'Nuevo fondo',
+      holdingSubmitLabel: s.editHoldingId ? 'Guardar' : 'Crear',
+      deleteHolding: this.deleteHolding,
 
       formBusy: s.formBusy,
     };
